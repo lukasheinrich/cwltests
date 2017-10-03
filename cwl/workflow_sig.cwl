@@ -8,15 +8,15 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    default: [ 1000, 1000, 1000, 1000 ]
-  weights:
-    type: float[]
-    default: [ 0.01875, 0.0125 ] 
+    default: [ 2000, 2000, 2000, 2000 ]
+  weight:
+    type: float
+    default: 0.0025
 
 outputs:
   merged:
     type: File
-    outputSource: hist_merge/merged
+    outputSource: select_hist/histogram
 
 steps:
   read:
@@ -50,15 +50,14 @@ steps:
     in:
       inputfile: select/outputfile
       name: { default: signal }
-      weight: weights
+      weight: weight
     out: [histogram]
-    scatter: weight
 
-  hist_merge:
-    run: merge.cwl
-    in:
-      histograms: select_hist/histogram
-    out: [merged]
+  #hist_merge:
+  #  run: merge.cwl
+  #  in:
+  #    histograms: select_hist/histogram
+  #  out: [merged]
 
 
 

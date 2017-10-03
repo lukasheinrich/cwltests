@@ -1,5 +1,6 @@
 
 [![Visualization](https://view.commonwl.org/graph/png/github.com/lukasheinrich/cwltests/blob/master/cwl/workflow.cwl)](https://view.commonwl.org/workflows/github.com/lukasheinrich/cwltests/blob/master/cwl/workflow.cwl)
+[![Visualization](yadage/yadviz.png)
 
 cwl: 
 

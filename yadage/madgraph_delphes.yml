@@ -1,0 +1,28 @@
+stages:
+  - name: prepare
+    dependencies: []
+    scheduler:
+      scheduler_type: 'singlestep-stage'
+      parameters:
+        model: sm
+        parametercard: '{workdir}/param.dat'
+        inputpars: defaultparam.yml
+      step: {$ref: 'preparestep.yml'}
+  - name: madgraph
+    dependencies: ['prepare','init']
+    scheduler:
+      scheduler_type: 'singlestep-stage'
+      parameters:
+        outputlhe: '{workdir}/output.lhe'
+        events: {stages: init, output: nevents, unwrap: true}
+        paramcard: {stages: prepare, output: parcard, unwrap: true}
+      step: {$ref: 'madgraph.yml'}
+  - name: pythia
+    dependencies: ['madgraph']
+    scheduler:
+      scheduler_type: 'singlestep-stage'
+      parameters:
+        outputhepmc: '{workdir}/output.hepmc'
+        events: {stages: init, output: nevents, unwrap: true}
+        lhefile: {stages: madgraph, output: lhefile, unwrap: true}
+      step: {$ref: 'pythia.yml'}

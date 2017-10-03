@@ -1,0 +1,10 @@
+process:
+  process_type: 'string-interpolated-cmd'
+  cmd: './steermadgraph.py proc.dat default_run.dat {paramcard} {outputlhe} -e {events}'
+publisher:
+  publisher_type: 'frompar-pub'
+  outputmap:
+    lhefile: outputlhe
+environment:
+  environment_type: 'docker-encapsulated'
+  image: lukasheinrich/recast_phenoexample

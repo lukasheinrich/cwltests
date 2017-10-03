@@ -1,0 +1,10 @@
+process:
+  process_type: 'string-interpolated-cmd'
+  cmd: './paramfromyaml.py --madgraph -f {inputpars} {model} {parametercard}'
+publisher:
+  publisher_type: 'frompar-pub'
+  outputmap:
+    parcard: parametercard
+environment:
+  environment_type: 'docker-encapsulated'
+  image: lukasheinrich/recast_phenoexample

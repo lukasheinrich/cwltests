@@ -1,0 +1,10 @@
+process:
+  process_type: 'string-interpolated-cmd'
+  cmd: './steerpythia.py {lhefile} {outputhepmc} -e {events}'
+publisher:
+  publisher_type: 'frompar-pub'
+  outputmap:
+    hepmcfile: outputhepmc
+environment:
+  environment_type: 'docker-encapsulated'
+  image: lukasheinrich/recast_phenoexample

@@ -8,10 +8,10 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    default: [ 2000, 2000, 2000, 2000 ]
+    #default: [ 2000, 2000, 2000, 2000 ]
   mcweight:
     type: float
-    default: 0.0025
+    #default: 0.0025
 
 outputs:
   merged:

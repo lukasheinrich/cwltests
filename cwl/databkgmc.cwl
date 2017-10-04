@@ -57,7 +57,7 @@ steps:
     run: workflow_sig.cwl
     in:
       nevents: signal_nevents
-      weight: signal_mcweight
+      mcweight: signal_mcweight
     out: [ merged ]
       
   merge:

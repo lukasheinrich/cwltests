@@ -11,6 +11,7 @@ inputs:
   inputfile: File  #FIXME, name based off of type/purpose of file
   weight: float
   name: string
+  shapevar: string
   variations:
     type: string[]
     default: [ "nominal" ]
@@ -27,7 +28,7 @@ arguments:
   - prefix: -c
     valueFrom: |
       source /usr/local/bin/thisroot.sh
-      python /code/histogram.py $(inputs.inputfile.path) hist.root $(inputs.name) $(inputs.weight) ${
+      python /code/histogram.py $(inputs.inputfile.path) hist.root $(inputs.name)_$(inputs.shapevar) $(inputs.weight) ${
         var list="";
         var variationsLength = inputs.variations.length;
         console.log(variationsLength);
@@ -37,5 +38,4 @@ arguments:
             list = list +",";
           }
         }
-        return list; }
-
+        return list; } {name}

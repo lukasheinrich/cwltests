@@ -9,7 +9,7 @@ inputs:
   nevents:
     type: int[]
     default: [ 2000, 2000, 2000, 2000 ]
-  weight:
+  mcweight:
     type: float
     default: 0.0025
 
@@ -50,7 +50,7 @@ steps:
     in:
       inputfile: select/outputfile
       name: { default: signal }
-      weight: weight
+      weight: mcweight
     out: [histogram]
 
   #hist_merge:
@@ -58,6 +58,3 @@ steps:
   #  in:
   #    histograms: select_hist/histogram
   #  out: [merged]
-
-
-

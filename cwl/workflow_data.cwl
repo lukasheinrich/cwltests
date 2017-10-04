@@ -9,10 +9,7 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    default: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
-  weight:
-    type: float
-    default: 0.0025
+    #default: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 
 outputs:
   merged:
@@ -23,7 +20,7 @@ steps:
   read:
     run: generate.cwl
     in:
-      type: { default: sig }
+      type: { default: data }
       nevents: nevents
     scatter: nevents
     out: [ events ]

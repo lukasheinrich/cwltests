@@ -60,7 +60,6 @@ steps:
       variations: weightvariations
     out: [ outputfile ] 
 
-
   merge_shape:
     run: merge.cwl
     in:

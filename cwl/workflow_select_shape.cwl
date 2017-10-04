@@ -42,5 +42,6 @@ steps:
       name: mcname
       weight: mcweight
       shapevar: shapevar
+      variations: { default: [ nominal ] }
     out: [histogram]
 

@@ -14,7 +14,7 @@ inputs:
   shapevar: string
   variations:
     type: string[]
-    default: [ "nominal" ]
+    # default: [ "nominal" ]
 
 outputs:
   histogram:

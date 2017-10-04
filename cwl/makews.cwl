@@ -11,9 +11,9 @@ inputs:
 
 outputs:
   workspace:
-    type: Directory
+    type: File
     outputBinding:
-      glob: workspace
+      glob: workspace*combined*model.root
 
 baseCommand: /bin/bash
 

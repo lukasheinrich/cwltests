@@ -38,6 +38,7 @@ steps:
     in:
       inputfile: merge/merged
       region: { default: signal }
+      variations: { default: [ nominal ] }
     out: [ outputfile ] 
 
   #select_merge:

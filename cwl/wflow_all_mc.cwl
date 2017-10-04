@@ -10,16 +10,16 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    default: [200,200]
+    #default: [200,200]
   mcnames:
     type: string[]
-    default: [mc1, mc2]
+    #default: [mc1,mc2]
   mcweights:
     type: float[]
-    default: [0.01875, 0.0125]
+    #default: [0.01875,0.0125]
   shapevars:
     type: string[]
-    default: [ shape_conv_up ,shape_conv_dn ]
+    default: [ shape_conv_up,shape_conv_dn ]
   weightvariations:
     type: string[]
     default:

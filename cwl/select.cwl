@@ -12,7 +12,7 @@ inputs:
   region: string
   variations:
     type: string[]
-    default: [ nominal ]
+    # default: [ nominal ]
 
 outputs:
   outputfile:  # FIXME, what is this?

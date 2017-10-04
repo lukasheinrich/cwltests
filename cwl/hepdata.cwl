@@ -7,7 +7,7 @@ requirements:
     dockerPull: lukasheinrich/dummyanalysis
 
 inputs:
-  combined_model: Directory
+  combined_model: File
 
 outputs:
   hepdata_submission:
@@ -21,5 +21,5 @@ arguments:
   - prefix: -c
     valueFrom: |
       source /usr/local/bin/thisroot.sh
-      python hepdata_export.py $(inputs.combined_model.path)
+      python /code/hepdata_export.py $(inputs.combined_model.path)
       zip submission.zip submission.yaml data1.yaml

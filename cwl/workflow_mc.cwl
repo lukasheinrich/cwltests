@@ -10,19 +10,16 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    default: [200,200]
-  weight:
-    type: float
-    default: 0.0025
+    # default: [200,200]
   mcname: string
   mcweight: float
   shapevars: string[]
   weightvariations:
     type: string[]
-    default:
-      - nominal
-      - weight_var1_up
-      - weight_var1_dn
+    #default:
+    #  - nominal
+    #  - weight_var1_up
+    #  - weight_var1_dn
 
 
 outputs:
@@ -34,7 +31,7 @@ steps:
   read:
     run: generate.cwl
     in:
-      type: { default: sig }
+      type: mcname
       nevents: nevents
     scatter: nevents
     out: [ events ]
@@ -76,11 +73,7 @@ steps:
       inputfile: select_signal/outputfile
       name: mcname
       weight: mcweight
-      variations:
-        default:
-          - nominal
-          - weight_var1_up
-          - weight_var1_dn
+      variations: weightvariations
     out: [histogram]
 
   merge_all_vars:

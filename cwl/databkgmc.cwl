@@ -20,10 +20,10 @@ inputs:
   signal_mcweight:
     type: float
     default: 0.0025
-  mcnames:
+  all_bkg_mc_mcnames:
     type: string[]
-    default: [mc1, mc2]
-  mcweights:
+    default: [mc1,mc2]
+  all_bkg_mc_mcweights:
     type: float[]
     default: [0.01875, 0.0125]
 
@@ -43,8 +43,8 @@ steps:
     run: wflow_all_mc.cwl
     in:
       nevents: all_bkg_mc_nevents
-      mcname: mcnames
-      mcweight: mcweights
+      mcnames: all_bkg_mc_mcnames
+      mcweights: all_bkg_mc_mcweights
     out: [ merged ]
 
   data:

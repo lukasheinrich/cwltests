@@ -7,7 +7,7 @@ requirements:
     dockerPull: lukasheinrich/dummyanalysis
 
 inputs:
-  combined_model: Directory
+  combined_model: File
 
 outputs:
   prefit_report:

@@ -20,6 +20,5 @@ baseCommand: /bin/bash
 arguments:
   - prefix: -c
     valueFrom: |
-      source /usr/local/bin/thisroot.sh
-      python /code/hepdata_export.py $(inputs.combined_model.path)
+      hepdata_export.py $(inputs.combined_model.path)
       zip submission.zip submission.yaml data1.yaml

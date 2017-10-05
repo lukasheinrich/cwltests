@@ -15,7 +15,7 @@ requirements:
 
 arguments:
 - cd
-- /code
+- /usr/local/bin
 - ;
 - ./paramfromyaml.py
 - --madgraph

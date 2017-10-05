@@ -16,7 +16,7 @@ requirements:
 
 arguments:
 - cd
-- /code
+- /usr/local/bin
 - ;
 - ./steerpythia.py
 - $(inputs.lhefile)

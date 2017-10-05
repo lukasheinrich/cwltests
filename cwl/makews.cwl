@@ -7,7 +7,7 @@ requirements:
     dockerPull: lukasheinrich/dummyanalysis
 
 inputs:
-  data_bkg_hists: File  #FIXME, name based off of type/purpose of file
+  data_bkg_hists: File
 
 outputs:
   workspace:
@@ -15,10 +15,9 @@ outputs:
     outputBinding:
       glob: workspace*combined*model.root
 
-baseCommand: /bin/bash
+baseCommand: makews.py
 
 arguments:
-  - prefix: -c
-    valueFrom: |
-      source /usr/local/bin/thisroot.sh
-      python /code/makews.py $(inputs.data_bkg_hists.path) $(runtime.outdir)/workspace $(runtime.outdir)/xml
+  - $(inputs.data_bkg_hists.path)
+  - $(runtime.outdir)/workspace
+  - $(runtime.outdir)/xml

@@ -16,7 +16,7 @@ requirements:
 
 arguments:
 - cd
-- /code
+- /usr/local/bin/
 - ;
 - ./steermadgraph.py
 - proc.dat

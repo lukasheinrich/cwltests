@@ -26,11 +26,9 @@ outputs:
     outputBinding:
       glob: merged.root
 
-baseCommand: /bin/bash
+baseCommand: []
 
 arguments:
-  - valueFrom: |
-      source /usr/local/bin/thisroot.sh
-      cat $(runtime.outdir)/input_list | xargs hadd merged.root
-    prefix: -c
+  - valueFrom: cat $(runtime.outdir)/input_list | xargs hadd merged.root
+    shellQuote: False
 

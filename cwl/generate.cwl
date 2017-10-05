@@ -5,7 +5,6 @@ class: CommandLineTool
 requirements:
   DockerRequirement:
     dockerPull: lukasheinrich/dummyanalysis
-  ShellCommandRequirement: {}
 
 inputs:
   type: string
@@ -17,11 +16,10 @@ outputs:
     outputBinding:
       glob: output_one.root
 
-baseCommand: /bin/bash
+baseCommand: generantuple.py
 
 arguments:
-  - valueFrom: |
-      source /usr/local/bin/thisroot.sh
-      python /code/generantuple.py $(inputs.type) $(inputs.nevents) output_one.root
-    prefix: -c
+  - $(inputs.type)
+  - $(inputs.nevents)
+  - output_one.root
 

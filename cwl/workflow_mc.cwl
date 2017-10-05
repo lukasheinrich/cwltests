@@ -10,17 +10,11 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    # default: [200,200]
   mcname: string
   mcweight: float
   shapevars: string[]
   weightvariations:
     type: string[]
-    #default:
-    #  - nominal
-    #  - weight_var1_up
-    #  - weight_var1_dn
-
 
 outputs:
   merged:

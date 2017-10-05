@@ -9,7 +9,6 @@ requirements:
 inputs:
   nevents:
     type: int[]
-    #default: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 
 outputs:
   merged:
@@ -47,7 +46,6 @@ steps:
       variations: { default: [ nominal ] }
     out: [ outputfile ] 
 
-
   #select_merge:
   #  run: merge.cwl
   #  in: {}
@@ -59,6 +57,7 @@ steps:
       inputfile: select_signal/outputfile
       name: { default: data }
       weight: { default: 1.0 }
+      variations: { default: [ nominal ] }
     out: [histogram]
 
   select_control_hist:
@@ -67,11 +66,14 @@ steps:
       inputfile: select_control/outputfile
       name: { default: qcd }
       weight: { default: 0.1875 }
+      variations: { default: [ nominal ] }
     out: [histogram]
 
   merge_all:
     run: merge.cwl
     in:
-      histograms: [ select_signal_hist/histogram, select_control_hist/histogram ]
+      histograms:
+        - select_signal_hist/histogram
+        - select_control_hist/histogram
     out: [merged]
 

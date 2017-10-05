@@ -25,7 +25,6 @@ baseCommand: /bin/bash
 arguments:
   - prefix: -c
     valueFrom: |
-      source /usr/local/bin/thisroot.sh
       hfquickplot write_vardef $(inputs.combined_model.path) combined nominal_vals.yml
       hfquickplot plot_channel $(inputs.combined_model.path) combined channel1 x nominal_vals.yml -c qcd,mc2,mc1,signal -o prefit.pdf
       hfquickplot fit $(inputs.combined_model.path) combined fitresults.yml
